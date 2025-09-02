@@ -40,4 +40,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // version 1.0
+    // Version 1.1
 }
