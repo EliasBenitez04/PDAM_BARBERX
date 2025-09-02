@@ -10,7 +10,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class AccesoActivity extends AppCompatActivity {
     private EditText aux_login, aux_pass;
 
     @Override
