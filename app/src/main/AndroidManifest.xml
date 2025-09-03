@@ -15,7 +15,7 @@
         <activity
             android:name=".MenuPrincipal"
             android:exported="true"
-            android:label="@string/title_activity_menu_principal"
+            android:label="@string/title_activity_menuprincipal"
             android:theme="@style/Theme.App_movil.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -22,4 +22,11 @@
         android:name="com.example.app_movil.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_configuracion"
+        android:name="com.example.app_movil.ui.config.ConfiguracionFragment"
+        android:label="@string/menu_configuracion"
+        tools:layout="@layout/fragment_configuracion" />
+
 </navigation>

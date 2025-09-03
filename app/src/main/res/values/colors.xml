@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Colores básicos -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Tonos de gris -->
+    <color name="gray_light">#FFD3D3D3</color>
+    <color name="gray_medium">#FF808080</color>
+    <color name="gray_dark">#FF404040</color>
+
+    <!-- Tonos de azul/celeste -->
+    <color name="blue_light">#FF81D4FA</color>
+    <color name="blue_medium">#FF29B6F6</color>
+    <color name="blue_dark">#FF0288D1</color>
+
+    <!-- Colores de acento -->
+    <color name="accent_yellow">#FFFFEB3B</color>
+    <color name="accent_red">#FFF44336</color>
+    <color name="accent_green">#FF4CAF50</color>
 </resources>
