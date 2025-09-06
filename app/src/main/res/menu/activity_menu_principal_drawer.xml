@@ -16,9 +16,20 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
+
+        <item
+            android:id="@+id/nav_servicios"
+            android:icon="@drawable/ic_servicios"
+            android:title="@string/menu_servicios" />
+
+        <item
+            android:id="@+id/nav_marcas"
+            android:icon="@drawable/ic_marcas"
+            android:title="@string/menu_marcas" />
+
         <item
             android:id="@+id/nav_configuracion"
             android:icon="@drawable/baseline_settings_24"
-            android:title="Configuración" />
+            android:title="@string/menu_configuracion" />
     </group>
 </menu>

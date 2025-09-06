@@ -11,5 +11,7 @@
     <string name="menu_home">Inicio</string>
     <string name="menu_gallery">Usuario</string>
     <string name="menu_slideshow">Equipo</string>
+    <string name="menu_servicios">Servicios</string>
+    <string name="menu_marcas">Marcas</string>
     <string name="menu_configuracion">Configuración</string>
 </resources>

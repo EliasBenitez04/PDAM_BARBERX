@@ -24,6 +24,18 @@
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
+        android:id="@+id/nav_servicios"
+        android:name="com.example.app_movil.ui.servicios.ServiciosFragment"
+        android:label="@string/menu_servicios"
+        tools:layout="@layout/fragment_servicios" />
+
+    <fragment
+        android:id="@+id/nav_marcas"
+        android:name="com.example.app_movil.ui.marcas.MarcasFragment"
+        android:label="@string/menu_marcas"
+        tools:layout="@layout/fragment_marcas" />
+
+    <fragment
         android:id="@+id/nav_configuracion"
         android:name="com.example.app_movil.ui.config.ConfiguracionFragment"
         android:label="@string/menu_configuracion"
