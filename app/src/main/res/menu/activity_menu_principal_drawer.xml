@@ -3,33 +3,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+    <!-- MENÚ PRINCIPAL -->
+    <item android:title="Menu Principal">
+        <menu>
+            <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/menu_home" />
+        </menu>
+    </item>
 
-        <item
-            android:id="@+id/nav_servicios"
-            android:icon="@drawable/ic_servicios"
-            android:title="@string/menu_servicios" />
+    <!-- CARGA DE DATOS -->
+    <item android:title="Carga de datos">
+        <menu>
+            <item
+                android:id="@+id/nav_servicios"
+                android:icon="@drawable/ic_servicios"
+                android:title="@string/menu_servicios" />
 
-        <item
-            android:id="@+id/nav_marcas"
-            android:icon="@drawable/ic_marcas"
-            android:title="@string/menu_marcas" />
+            <item
+                android:id="@+id/nav_marcas"
+                android:icon="@drawable/ic_marcas"
+                android:title="@string/menu_marcas" />
 
-        <item
-            android:id="@+id/nav_configuracion"
-            android:icon="@drawable/baseline_settings_24"
-            android:title="@string/menu_configuracion" />
-    </group>
+            <item
+                android:id="@+id/nav_slideshow"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="@string/menu_slideshow" />
+        </menu>
+    </item>
+
+    <!-- SISTEMA -->
+    <item android:title="Sistema">
+        <menu>
+            <item
+                android:id="@+id/nav_gallery"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/menu_gallery" />
+
+            <item
+                android:id="@+id/nav_configuracion"
+                android:icon="@drawable/baseline_settings_24"
+                android:title="@string/menu_configuracion" />
+        </menu>
+    </item>
+
 </menu>
