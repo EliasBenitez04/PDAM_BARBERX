@@ -11,9 +11,17 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Inicio</string>
-    <string name="menu_gallery">Usuario</string>
-    <string name="menu_slideshow">Equipo</string>
+    <string name="menu_agendamiento">Agendamiento</string>
+    <string name="menu_cargo">Cargos</string>
+    <string name="menu_ciudad">Ciudad</string>
+    <string name="menu_cliente">Cliente</string>
+    <string name="menu_fin_servicio">Fin Servicio</string>
+    <string name="menu_forma_pagos">Formas De Pagos</string>
+    <string name="menu_funcionario">Funcionario</string>
+    <string name="menu_pagos">Pagos</string>
     <string name="menu_servicios">Servicios</string>
-    <string name="menu_marcas">Marcas</string>
-    <string name="menu_configuracion">Configuración</string>
+    <string name="menu_sucursal">Sucursal</string>
+    <string name="menu_tipo_servicio">Tipos Servicios</string>
+    <string name="menu_usuario">Usuarios</string>
+
 </resources>

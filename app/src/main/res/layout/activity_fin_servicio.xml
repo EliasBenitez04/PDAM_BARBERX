@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drawer_layout_servicio"
+    android:id="@+id/drawer_layout_fin_servicio"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
@@ -14,11 +14,11 @@
 
         <!-- Toolbar -->
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar_servicio"
+            android:id="@+id/toolbar_fin_servicio"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:backgroundTint="@color/blue_dark"
-            android:title="Servicios"
+            android:title="Fin de Servicio"
             android:titleTextColor="@android:color/white"
             app:navigationIcon="?attr/homeAsUpIndicator" />
 
@@ -33,15 +33,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <!-- Tipo de Servicio -->
+                <!-- Agendamiento pendiente -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Tipo de servicio"
+                    android:hint="Agendamiento"
                     app:boxBackgroundMode="outline">
 
                     <AutoCompleteTextView
-                        android:id="@+id/spinner_tipo_servicio"
+                        android:id="@+id/spinner_agendamiento"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="none"
@@ -53,20 +53,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="12dp" />
 
-                <!-- Descripción -->
+                <!-- Usuario logueado -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Descripción del servicio"
+                    android:hint="Usuario"
                     app:boxBackgroundMode="outline">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_descripcion_servicio"
+                        android:id="@+id/edt_usuario"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textMultiLine"
-                        android:gravity="top"
-                        android:minHeight="100dp"
+                        android:focusable="false"
+                        android:enabled="false"
                         android:textSize="16sp"
                         android:padding="12dp"/>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -75,18 +74,62 @@
                     android:layout_width="match_parent"
                     android:layout_height="12dp" />
 
-                <!-- Precio -->
+                <!-- Fecha fin -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Precio"
+                    android:hint="Fecha de finalización"
                     app:boxBackgroundMode="outline">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_precio_servicio"
+                        android:id="@+id/edt_fecha_fin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:textSize="16sp"
+                        android:padding="12dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp" />
+
+                <!-- Estado -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Estado"
+                    app:boxBackgroundMode="outline">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_estado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:enabled="false"
+                        android:text="REALIZADO"
+                        android:textSize="16sp"
+                        android:padding="12dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp" />
+
+                <!-- Observación -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Observación"
+                    app:boxBackgroundMode="outline">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_observacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:gravity="top"
+                        android:inputType="textMultiLine"
                         android:textSize="16sp"
                         android:padding="12dp"/>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -104,7 +147,7 @@
                     android:gravity="center">
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_guardar_servicio"
+                        android:id="@+id/btn_guardar_fin_servicio"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -119,7 +162,7 @@
                         android:layout_height="wrap_content" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_limpiar_servicio"
+                        android:id="@+id/btn_limpiar_fin_servicio"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -134,7 +177,7 @@
                         android:layout_height="wrap_content" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_salir_servicio"
+                        android:id="@+id/btn_salir_fin_servicio"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -150,7 +193,7 @@
 
     <!-- Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view_servicio"
+        android:id="@+id/nav_view_fin_servicio"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"

@@ -3,49 +3,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <!-- MENÚ PRINCIPAL -->
-    <item android:title="Menu Principal">
+    <!-- Inicio -->
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="@string/menu_home" />
+
+    <!-- Movimientos -->
+    <item android:title="Movimientos">
         <menu>
             <item
-                android:id="@+id/nav_home"
-                android:icon="@drawable/ic_menu_camera"
-                android:title="@string/menu_home" />
+                android:id="@+id/nav_view_agendamiento"
+                android:icon="@android:drawable/ic_menu_send"
+                android:title="@string/menu_agendamiento" />
+
+            <item
+                android:id="@+id/nav_fin_servicio"
+                android:icon="@android:drawable/ic_menu_send"
+                android:title="@string/menu_fin_servicio" />
+
+            <item
+                android:id="@+id/nav_pagos"
+                android:icon="@android:drawable/ic_menu_send"
+                android:title="@string/menu_pagos" />
         </menu>
     </item>
 
-    <!-- CARGA DE DATOS -->
+    <!-- Carga de datos -->
     <item android:title="Carga de datos">
         <menu>
             <item
+                android:id="@+id/nav_cargos"
+                android:icon="@android:drawable/ic_menu_send"
+                android:title="@string/menu_cargo" />
+
+            <item
+                android:id="@+id/nav_ciudades"
+                android:icon="@android:drawable/ic_menu_send"
+                android:title="@string/menu_ciudad" />
+
+            <item
+                android:id="@+id/nav_sucursales"
+                android:icon="@android:drawable/ic_menu_send"
+                android:title="@string/menu_sucursal" />
+
+            <item
+                android:id="@+id/nav_usuarios"
+                android:icon="@android:drawable/ic_menu_send"
+                android:title="@string/menu_usuario" />
+
+            <item
+                android:id="@+id/nav_clientes"
+                android:icon="@android:drawable/ic_menu_send"
+                android:title="@string/menu_cliente" />
+
+            <item
+                android:id="@+id/nav_funcionarios"
+                android:icon="@android:drawable/ic_menu_send"
+                android:title="@string/menu_funcionario" />
+
+            <item
+                android:id="@+id/nav_formas_pago"
+                android:icon="@android:drawable/ic_menu_send"
+                android:title="@string/menu_forma_pagos" />
+
+            <item
+                android:id="@+id/nav_tipo_servicio"
+                android:icon="@android:drawable/ic_menu_send"
+                android:title="@string/menu_tipo_servicio" />
+
+            <item
                 android:id="@+id/nav_servicios"
-                android:icon="@drawable/ic_servicios"
+                android:icon="@android:drawable/ic_menu_send"
                 android:title="@string/menu_servicios" />
-
-            <item
-                android:id="@+id/nav_marcas"
-                android:icon="@drawable/ic_marcas"
-                android:title="@string/menu_marcas" />
-
-            <item
-                android:id="@+id/nav_slideshow"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="@string/menu_slideshow" />
         </menu>
     </item>
-
-    <!-- SISTEMA -->
-    <item android:title="Sistema">
-        <menu>
-            <item
-                android:id="@+id/nav_gallery"
-                android:icon="@drawable/ic_menu_gallery"
-                android:title="@string/menu_gallery" />
-
-            <item
-                android:id="@+id/nav_configuracion"
-                android:icon="@drawable/baseline_settings_24"
-                android:title="@string/menu_configuracion" />
-        </menu>
-    </item>
-
 </menu>

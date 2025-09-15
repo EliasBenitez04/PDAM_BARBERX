@@ -16,46 +16,73 @@
         <activity
             android:name=".MenuPrincipal"
             android:exported="true"
-            android:label="@string/title_activity_menuprincipal"
+            android:label="Menú Principal"
             android:theme="@style/Theme.App_movil.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!--
+        <activity
+            android:name=".CiudadActivity"
+            android:exported="true"
+            android:label="Ciudades" />
+
+        <activity
+            android:name=".SucursalActivity"
+            android:exported="true"
+            android:label="Sucursales" />
+
+        <activity
+            android:name=".CargoActivity"
+            android:exported="true"
+            android:label="Cargos" />
+
+        <activity
+            android:name=".ClienteActivity"
+            android:exported="true"
+            android:label="Clientes" />
+
+        <activity
+            android:name=".UsuarioActivity"
+            android:exported="true"
+            android:label="Usuarios" />
+
+        <activity
+            android:name=".TipoServicioActivity"
+            android:exported="true"
+            android:label="Tipos de Servicio" />
+
+        <activity
+            android:name=".FuncionarioActivity"
+            android:exported="true"
+            android:label="Funcionarios" />
+
+        <activity
+            android:name=".FormaPagosActivity"
+            android:exported="true"
+            android:label="Formas de Pago" />
+
+        <activity
+            android:name=".PagosActivity"
+            android:exported="true"
+            android:label="Pagos" />
+
+        <activity
+            android:name=".AgendamientoActivity"
+            android:exported="true"
+            android:label="Agendamiento" />
+
         <activity
             android:name=".ServiciosActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-         <activity
-            android:name=".MarcasActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"
+            android:label="Servicios" />
 
         <activity
-        android:name=".AccesoActivity"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity> -->
+            android:name=".FinServicioActivity"
+            android:exported="true"
+            android:label="Finalizar Servicio" />
 
     </application>
-
 </manifest>

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drawer_layout_servicio"
+    android:id="@+id/drawer_layout_pago"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <!-- Contenedor principal -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -14,86 +13,121 @@
 
         <!-- Toolbar -->
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar_servicio"
+            android:id="@+id/toolbar_pago"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:backgroundTint="@color/blue_dark"
-            android:title="Servicios"
+            android:title="Pagos"
             android:titleTextColor="@android:color/white"
-            app:navigationIcon="?attr/homeAsUpIndicator" />
+            app:navigationIcon="?attr/homeAsUpIndicator"/>
 
         <!-- Contenido -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp">
+            android:padding="20dp">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <!-- Tipo de Servicio -->
+                <!-- Fecha del pago -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Tipo de servicio"
+                    android:hint="Fecha del pago"
+                    app:boxBackgroundMode="outline">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_fecha_pago"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="56dp"
+                        android:padding="12dp"
+                        android:textSize="16sp"
+                        android:focusable="false"
+                        android:inputType="none"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Space android:layout_width="match_parent" android:layout_height="16dp"/>
+
+                <!-- Fin de servicio -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fin de servicio"
                     app:boxBackgroundMode="outline">
 
                     <AutoCompleteTextView
-                        android:id="@+id/spinner_tipo_servicio"
+                        android:id="@+id/spinner_fin_servicio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="none"
+                        android:minHeight="56dp"
+                        android:padding="12dp"
                         android:textSize="16sp"
-                        android:padding="12dp"/>
+                        android:inputType="none"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="12dp" />
+                <Space android:layout_width="match_parent" android:layout_height="16dp"/>
 
-                <!-- Descripción -->
+                <!-- Forma de pago -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Descripción del servicio"
+                    android:hint="Forma de pago"
+                    app:boxBackgroundMode="outline">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_forma_pago"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="56dp"
+                        android:padding="12dp"
+                        android:textSize="16sp"
+                        android:inputType="none"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Space android:layout_width="match_parent" android:layout_height="16dp"/>
+
+                <!-- Monto -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Monto"
                     app:boxBackgroundMode="outline">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_descripcion_servicio"
+                        android:id="@+id/edt_monto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textMultiLine"
+                        android:minHeight="56dp"
+                        android:padding="12dp"
+                        android:textSize="16sp"
+                        android:enabled="false"
+                        android:textColor="@android:color/black"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Space android:layout_width="match_parent" android:layout_height="16dp"/>
+
+                <!-- Observación -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Observación"
+                    app:boxBackgroundMode="outline">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_observacion_pago"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:padding="12dp"
+                        android:textSize="16sp"
                         android:gravity="top"
-                        android:minHeight="100dp"
-                        android:textSize="16sp"
-                        android:padding="12dp"/>
+                        android:inputType="textMultiLine"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="12dp" />
-
-                <!-- Precio -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Precio"
-                    app:boxBackgroundMode="outline">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_precio_servicio"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
-                        android:textSize="16sp"
-                        android:padding="12dp"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="16dp" />
+                <Space android:layout_width="match_parent" android:layout_height="20dp"/>
 
                 <!-- Botones -->
                 <LinearLayout
@@ -104,45 +138,44 @@
                     android:gravity="center">
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_guardar_servicio"
+                        android:id="@+id/btn_guardar_pago"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:minHeight="56dp"
+                        android:textSize="16sp"
                         android:text="Guardar"
                         android:backgroundTint="@color/accent_green"
                         android:textColor="@android:color/white"
-                        android:textSize="16sp"
-                        app:cornerRadius="16dp" />
+                        app:cornerRadius="18dp"/>
 
-                    <Space
-                        android:layout_width="8dp"
-                        android:layout_height="wrap_content" />
+                    <Space android:layout_width="8dp" android:layout_height="wrap_content"/>
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_limpiar_servicio"
+                        android:id="@+id/btn_limpiar_pago"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:minHeight="56dp"
+                        android:textSize="16sp"
                         android:text="Limpiar"
                         android:backgroundTint="@color/blue_dark"
                         android:textColor="@android:color/white"
-                        android:textSize="16sp"
-                        app:cornerRadius="16dp" />
+                        app:cornerRadius="18dp"/>
 
-                    <Space
-                        android:layout_width="8dp"
-                        android:layout_height="wrap_content" />
+                    <Space android:layout_width="8dp" android:layout_height="wrap_content"/>
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_salir_servicio"
+                        android:id="@+id/btn_salir_pago"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:minHeight="56dp"
+                        android:textSize="16sp"
                         android:text="Salir"
                         android:backgroundTint="@color/accent_red"
                         android:textColor="@android:color/white"
-                        android:textSize="16sp"
-                        app:cornerRadius="16dp" />
+                        app:cornerRadius="18dp"/>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
@@ -150,11 +183,11 @@
 
     <!-- Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view_servicio"
+        android:id="@+id/nav_view_pago"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_menu_principal"
-        app:menu="@menu/activity_menu_principal_drawer" />
+        app:menu="@menu/activity_menu_principal_drawer"/>
 </androidx.drawerlayout.widget.DrawerLayout>

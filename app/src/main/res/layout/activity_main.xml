@@ -79,7 +79,8 @@
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toStartOf="@id/btn_salir"
         app:layout_constraintStart_toStartOf="@id/btn_inicio"
-        app:layout_constraintTop_toBottomOf="@id/btn_inicio" />
+        app:layout_constraintTop_toBottomOf="@id/btn_inicio"
+        android:onClick="limpiar"/>
 
     <Button
         android:id="@+id/btn_salir"
@@ -93,20 +94,7 @@
         app:layout_constraintStart_toEndOf="@id/btn_limpiar"
         app:layout_constraintEnd_toEndOf="@id/btn_inicio"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="8dp"/>
-
-    <TextView
-        android:id="@+id/tv_olvide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¿Olvidaste tu contraseña?"
-        android:textColor="#2196F3"
-        android:textSize="14sp"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintTop_toBottomOf="@id/btn_salir"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginStart="8dp"
+        android:onClick="salir" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

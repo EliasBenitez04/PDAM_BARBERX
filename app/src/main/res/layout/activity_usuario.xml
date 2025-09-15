@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drawer_layout_servicio"
+    android:id="@+id/drawer_layout_usuario"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
@@ -14,15 +14,15 @@
 
         <!-- Toolbar -->
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar_servicio"
+            android:id="@+id/toolbar_usuario"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:backgroundTint="@color/blue_dark"
-            android:title="Servicios"
+            android:title="Usuarios"
             android:titleTextColor="@android:color/white"
             app:navigationIcon="?attr/homeAsUpIndicator" />
 
-        <!-- Contenido -->
+        <!-- Contenido scrollable -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -33,15 +33,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <!-- Tipo de Servicio -->
+                <!-- Funcionario -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Tipo de servicio"
+                    android:hint="Funcionario"
                     app:boxBackgroundMode="outline">
 
                     <AutoCompleteTextView
-                        android:id="@+id/spinner_tipo_servicio"
+                        android:id="@+id/spinner_funcionario"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="none"
@@ -53,20 +53,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="12dp" />
 
-                <!-- Descripción -->
+                <!-- Usuario -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Descripción del servicio"
+                    android:hint="Usuario"
                     app:boxBackgroundMode="outline">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_descripcion_servicio"
+                        android:id="@+id/edt_usuario_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textMultiLine"
-                        android:gravity="top"
-                        android:minHeight="100dp"
+                        android:inputType="text"
                         android:textSize="16sp"
                         android:padding="12dp"/>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -75,18 +73,39 @@
                     android:layout_width="match_parent"
                     android:layout_height="12dp" />
 
-                <!-- Precio -->
+                <!-- Contraseña -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Precio"
+                    android:hint="Contraseña"
                     app:boxBackgroundMode="outline">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_precio_servicio"
+                        android:id="@+id/edt_usuario_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
+                        android:inputType="textPassword"
+                        android:textSize="16sp"
+                        android:padding="12dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp" />
+
+                <!-- Fecha de contratación -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha de contratación"
+                    app:boxBackgroundMode="outline">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_fecha_contratacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:inputType="none"
                         android:textSize="16sp"
                         android:padding="12dp"/>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -104,7 +123,7 @@
                     android:gravity="center">
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_guardar_servicio"
+                        android:id="@+id/btn_guardar_usuario"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -119,7 +138,7 @@
                         android:layout_height="wrap_content" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_limpiar_servicio"
+                        android:id="@+id/btn_limpiar_usuario"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -134,7 +153,7 @@
                         android:layout_height="wrap_content" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_salir_servicio"
+                        android:id="@+id/btn_salir_usuario"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -150,7 +169,7 @@
 
     <!-- Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view_servicio"
+        android:id="@+id/nav_view_usuario"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"

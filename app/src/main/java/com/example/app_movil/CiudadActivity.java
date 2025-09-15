@@ -5,15 +5,15 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class ServiciosActivity extends AppCompatActivity {
+public class CiudadActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_servicios); // usa tu layout XML
+        setContentView(R.layout.activity_ciudad); // usa tu layout XML
 
         // Configurar Toolbar correctamente
-        Toolbar toolbar = findViewById(R.id.toolbar_servicio);
+        Toolbar toolbar = findViewById(R.id.toolbar_ciudad);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(getTitle());
 
