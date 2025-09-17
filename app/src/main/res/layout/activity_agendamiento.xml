@@ -31,22 +31,21 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:spacing="12dp">
+                android:layout_height="wrap_content">
 
                 <!-- Fecha y hora reserva -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
                     android:hint="Fecha y hora de reserva"
-                    app:boxBackgroundMode="outline">
+                    app:boxBackgroundMode="outline"
+                    android:padding="8dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
                         android:id="@+id/edt_fecha_reserva"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="56dp"
-                        android:padding="12dp"
+                        android:layout_height="48dp"
                         android:focusable="false"
                         android:inputType="none"/>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -55,15 +54,15 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
                     android:hint="Fecha atención"
-                    app:boxBackgroundMode="outline">
+                    app:boxBackgroundMode="outline"
+                    android:padding="8dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
                         android:id="@+id/edt_fecha_atencion"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="56dp"
-                        android:padding="12dp"
+                        android:layout_height="48dp"
                         android:focusable="false"
                         android:inputType="none"/>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -72,15 +71,16 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
                     android:hint="Cliente"
-                    app:boxBackgroundMode="outline">
+                    app:boxBackgroundMode="outline"
+                    app:endIconMode="dropdown_menu">
 
-                    <AutoCompleteTextView
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
                         android:id="@+id/spinner_cliente"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="56dp"
-                        android:padding="12dp"
+                        android:layout_height="48dp"
+                        android:dropDownWidth="match_parent"
                         android:inputType="none"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -88,15 +88,16 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
                     android:hint="Barbero"
-                    app:boxBackgroundMode="outline">
+                    app:boxBackgroundMode="outline"
+                    app:endIconMode="dropdown_menu">
 
-                    <AutoCompleteTextView
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
                         android:id="@+id/spinner_barbero"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="56dp"
-                        android:padding="12dp"
+                        android:layout_height="48dp"
+                        android:dropDownWidth="match_parent"
                         android:inputType="none"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -114,34 +115,35 @@
                     android:id="@+id/rv_servicios"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:overScrollMode="never"/>
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:layout_marginBottom="12dp"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_agregar_servicio"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="56dp"
+                    android:layout_height="56dp"
                     android:text="Agregar Servicio"
                     android:backgroundTint="@color/blue_dark"
                     android:textColor="@android:color/white"
                     app:cornerRadius="12dp"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginBottom="16dp"/>
 
                 <!-- Estado -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
                     android:hint="Estado"
-                    app:boxBackgroundMode="outline">
+                    app:boxBackgroundMode="outline"
+                    app:endIconMode="dropdown_menu">
 
-                    <AutoCompleteTextView
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
                         android:id="@+id/spinner_estado"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="56dp"
-                        android:padding="12dp"
-                        android:inputType="none"
-                        android:text="PENDIENTE"/>
+                        android:layout_height="48dp"
+                        android:dropDownWidth="match_parent"
+                        android:inputType="none"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Observación -->
@@ -149,13 +151,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Observación"
-                    app:boxBackgroundMode="outline">
+                    app:boxBackgroundMode="outline"
+                    android:layout_marginBottom="16dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_observacion"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
-                        android:padding="12dp"
                         android:gravity="top"
                         android:inputType="textMultiLine"/>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -210,6 +212,26 @@
                         android:textColor="@android:color/white"
                         app:cornerRadius="16dp"/>
                 </LinearLayout>
+
+                <!-- RecyclerView de Agendamientos Guardados -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Agendamientos guardados:"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="4dp"
+                    android:paddingStart="8dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_agendamientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:layout_marginBottom="16dp"/>
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

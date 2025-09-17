@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout_usuario"
     android:layout_width="match_parent"
@@ -22,7 +23,7 @@
             android:titleTextColor="@android:color/white"
             app:navigationIcon="?attr/homeAsUpIndicator" />
 
-        <!-- Contenido scrollable -->
+        <!-- Contenido -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -34,34 +35,32 @@
                 android:layout_height="wrap_content">
 
                 <!-- Funcionario -->
-                <com.google.android.material.textfield.TextInputLayout
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Funcionario"
-                    app:boxBackgroundMode="outline">
+                    android:text="Funcionario"
+                    android:textStyle="bold"
+                    android:paddingBottom="4dp"/>
 
-                    <AutoCompleteTextView
-                        android:id="@+id/spinner_funcionario"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="none"
-                        android:textSize="16sp"
-                        android:padding="12dp"/>
-                </com.google.android.material.textfield.TextInputLayout>
+                <Spinner
+                    android:id="@+id/spn_funcionario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"/>
 
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="12dp" />
 
-                <!-- Usuario -->
+                <!-- Nombre de Usuario -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Usuario"
+                    android:hint="Nombre de usuario"
                     app:boxBackgroundMode="outline">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_usuario_name"
+                        android:id="@+id/edt_usuario"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
@@ -78,34 +77,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Contraseña"
+                    app:passwordToggleEnabled="true"
                     app:boxBackgroundMode="outline">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_usuario_password"
+                        android:id="@+id/edt_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
-                        android:textSize="16sp"
-                        android:padding="12dp"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="12dp" />
-
-                <!-- Fecha de contratación -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Fecha de contratación"
-                    app:boxBackgroundMode="outline">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_fecha_contratacion"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:inputType="none"
                         android:textSize="16sp"
                         android:padding="12dp"/>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -163,6 +142,18 @@
                         android:textSize="16sp"
                         app:cornerRadius="16dp" />
                 </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+                <!-- RecyclerView para mostrar los usuarios -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_usuarios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout_servicio"
     android:layout_width="match_parent"
@@ -34,20 +35,18 @@
                 android:layout_height="wrap_content">
 
                 <!-- Tipo de Servicio -->
-                <com.google.android.material.textfield.TextInputLayout
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Tipo de servicio"
-                    app:boxBackgroundMode="outline">
+                    android:text="Tipo de servicio"
+                    android:textStyle="bold"
+                    android:paddingBottom="4dp"/>
 
-                    <AutoCompleteTextView
-                        android:id="@+id/spinner_tipo_servicio"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="none"
-                        android:textSize="16sp"
-                        android:padding="12dp"/>
-                </com.google.android.material.textfield.TextInputLayout>
+                <Spinner
+                    android:id="@+id/spn_tipo_servicio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"/>
 
                 <Space
                     android:layout_width="match_parent"
@@ -61,7 +60,7 @@
                     app:boxBackgroundMode="outline">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_descripcion_servicio"
+                        android:id="@+id/edt_servicio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textMultiLine"
@@ -83,7 +82,7 @@
                     app:boxBackgroundMode="outline">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_precio_servicio"
+                        android:id="@+id/edt_precio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="numberDecimal"
@@ -144,6 +143,18 @@
                         android:textSize="16sp"
                         app:cornerRadius="16dp" />
                 </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+                <!-- RecyclerView para mostrar los servicios -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_servicios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@android:color/white"
+    android:layout_marginBottom="8dp"
+    android:elevation="2dp">
+
+    <!-- Nombre y Apellido -->
+    <TextView
+        android:id="@+id/tv_nombre_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre Cliente"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <!-- CI -->
+    <TextView
+        android:id="@+id/tv_ci_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CI"
+        android:textSize="14sp"
+        android:textColor="@color/gray_dark"/>
+
+    <!-- Teléfono -->
+    <TextView
+        android:id="@+id/tv_telefono_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Teléfono"
+        android:textSize="14sp"
+        android:textColor="@color/gray_dark"/>
+
+    <!-- Ciudad -->
+    <TextView
+        android:id="@+id/tv_ciudad_cliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ciudad"
+        android:textSize="14sp"
+        android:textColor="@color/gray_dark"/>
+
+    <!-- Botones Editar y Borrar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="6dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_editar_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar"
+            android:textSize="14sp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_borrar_cliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Borrar"
+            android:textSize="14sp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+</LinearLayout>

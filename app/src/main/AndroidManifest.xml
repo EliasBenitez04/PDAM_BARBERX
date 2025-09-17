@@ -13,10 +13,11 @@
         android:theme="@style/Theme.App_movil"
         tools:targetApi="31">
 
+        <!-- Activity de acceso -->
         <activity
-            android:name=".MenuPrincipal"
+            android:name=".AccesoActivity"
             android:exported="true"
-            android:label="Menú Principal"
+            android:label="Acceso"
             android:theme="@style/Theme.App_movil.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,65 +25,26 @@
             </intent-filter>
         </activity>
 
+        <!-- Menú principal (cerrada correctamente) -->
         <activity
-            android:name=".CiudadActivity"
+            android:name=".MenuPrincipal"
             android:exported="true"
-            android:label="Ciudades" />
+            android:label="Menú Principal"
+            android:theme="@style/Theme.App_movil.NoActionBar" />
 
-        <activity
-            android:name=".SucursalActivity"
-            android:exported="true"
-            android:label="Sucursales" />
-
-        <activity
-            android:name=".CargoActivity"
-            android:exported="true"
-            android:label="Cargos" />
-
-        <activity
-            android:name=".ClienteActivity"
-            android:exported="true"
-            android:label="Clientes" />
-
-        <activity
-            android:name=".UsuarioActivity"
-            android:exported="true"
-            android:label="Usuarios" />
-
-        <activity
-            android:name=".TipoServicioActivity"
-            android:exported="true"
-            android:label="Tipos de Servicio" />
-
-        <activity
-            android:name=".FuncionarioActivity"
-            android:exported="true"
-            android:label="Funcionarios" />
-
-        <activity
-            android:name=".FormaPagosActivity"
-            android:exported="true"
-            android:label="Formas de Pago" />
-
-        <activity
-            android:name=".PagosActivity"
-            android:exported="true"
-            android:label="Pagos" />
-
-        <activity
-            android:name=".AgendamientoActivity"
-            android:exported="true"
-            android:label="Agendamiento" />
-
-        <activity
-            android:name=".ServiciosActivity"
-            android:exported="true"
-            android:label="Servicios" />
-
-        <activity
-            android:name=".FinServicioActivity"
-            android:exported="true"
-            android:label="Finalizar Servicio" />
+        <!-- Otras actividades -->
+        <activity android:name=".CiudadActivity" android:exported="true" android:label="Ciudades" />
+        <activity android:name=".SucursalActivity" android:exported="true" android:label="Sucursales" />
+        <activity android:name=".CargoActivity" android:exported="true" android:label="Cargos" />
+        <activity android:name=".ClienteActivity" android:exported="true" android:label="Clientes" />
+        <activity android:name=".UsuarioActivity" android:exported="true" android:label="Usuarios" />
+        <activity android:name=".TipoServicioActivity" android:exported="true" android:label="Tipos de Servicio" />
+        <activity android:name=".FuncionarioActivity" android:exported="true" android:label="Funcionarios" />
+        <activity android:name=".FormaPagosActivity" android:exported="true" android:label="Formas de Pago" />
+        <activity android:name=".PagosActivity" android:exported="true" android:label="Pagos" />
+        <activity android:name=".AgendamientoActivity" android:exported="true" android:label="Agendamiento" />
+        <activity android:name=".ServiciosActivity" android:exported="true" android:label="Servicios" />
+        <activity android:name=".FinServicioActivity" android:exported="true" android:label="Finalizar Servicio" />
 
     </application>
 </manifest>

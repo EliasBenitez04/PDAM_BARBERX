@@ -22,7 +22,7 @@
             android:titleTextColor="@android:color/white"
             app:navigationIcon="?attr/homeAsUpIndicator"/>
 
-        <!-- Contenido dentro de ScrollView -->
+        <!-- Contenido -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -33,29 +33,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <!-- Campo de texto con borde Material3 -->
+                <!-- EditText para ciudad -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nombre de la ciudad"
                     app:boxBackgroundMode="outline"
-                    app:boxStrokeColor="@color/blue_dark"
-                    app:boxCornerRadiusTopStart="8dp"
-                    app:boxCornerRadiusTopEnd="8dp"
-                    app:boxCornerRadiusBottomStart="8dp"
-                    app:boxCornerRadiusBottomEnd="8dp">
+                    app:boxStrokeColor="@color/blue_dark">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_ciudad"
                         android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:gravity="top"
-                        android:inputType="textMultiLine"
-                        android:padding="12dp"
-                        android:textSize="16sp"/>
+                        android:layout_height="48dp"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Espacio -->
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="16dp"/>
@@ -65,23 +56,16 @@
                     android:id="@+id/btn_guardar_ciudad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Guardar"
-                    app:cornerRadius="16dp"
-                    android:backgroundTint="@color/accent_green"
-                    android:textColor="@android:color/white"/>
-
-                <!-- Espacio -->
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="16dp"/>
+                    android:text="Guardar"/>
 
                 <!-- Botones Limpiar y Salir -->
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:weightSum="2"
-                    android:gravity="center">
+                    android:layout_marginTop="8dp">
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_limpiar_ciudad"
@@ -89,7 +73,6 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="Limpiar"
-                        app:cornerRadius="16dp"
                         android:backgroundTint="@color/blue_dark"
                         android:textColor="@android:color/white"/>
 
@@ -103,10 +86,19 @@
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:text="Salir"
-                        app:cornerRadius="16dp"
                         android:backgroundTint="@color/accent_red"
                         android:textColor="@android:color/white"/>
                 </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"/>
+
+                <!-- RecyclerView para mostrar ciudades -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_ciudades"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

@@ -38,12 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Nombre"
-                    app:boxBackgroundMode="outline"
-                    app:boxStrokeColor="@color/blue_dark"
-                    app:boxCornerRadiusTopStart="8dp"
-                    app:boxCornerRadiusTopEnd="8dp"
-                    app:boxCornerRadiusBottomStart="8dp"
-                    app:boxCornerRadiusBottomEnd="8dp">
+                    app:boxBackgroundMode="outline">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_nombre_cliente"
@@ -61,12 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Apellido"
-                    app:boxBackgroundMode="outline"
-                    app:boxStrokeColor="@color/blue_dark"
-                    app:boxCornerRadiusTopStart="8dp"
-                    app:boxCornerRadiusTopEnd="8dp"
-                    app:boxCornerRadiusBottomStart="8dp"
-                    app:boxCornerRadiusBottomEnd="8dp">
+                    app:boxBackgroundMode="outline">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_apellido_cliente"
@@ -84,12 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="CI"
-                    app:boxBackgroundMode="outline"
-                    app:boxStrokeColor="@color/blue_dark"
-                    app:boxCornerRadiusTopStart="8dp"
-                    app:boxCornerRadiusTopEnd="8dp"
-                    app:boxCornerRadiusBottomStart="8dp"
-                    app:boxCornerRadiusBottomEnd="8dp">
+                    app:boxBackgroundMode="outline">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_ci_cliente"
@@ -107,12 +92,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Teléfono"
-                    app:boxBackgroundMode="outline"
-                    app:boxStrokeColor="@color/blue_dark"
-                    app:boxCornerRadiusTopStart="8dp"
-                    app:boxCornerRadiusTopEnd="8dp"
-                    app:boxCornerRadiusBottomStart="8dp"
-                    app:boxCornerRadiusBottomEnd="8dp">
+                    app:boxBackgroundMode="outline">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_telefono_cliente"
@@ -149,7 +129,7 @@
                     android:layout_height="wrap_content"
                     android:text="Guardar"
                     app:cornerRadius="16dp"
-                    android:backgroundTint="@color/blue_dark"
+                    android:backgroundTint="@color/accent_green"
                     android:textColor="@android:color/white"/>
 
                 <Space android:layout_width="match_parent" android:layout_height="16dp"/>
@@ -183,9 +163,19 @@
                         android:layout_height="wrap_content"
                         android:text="Salir"
                         app:cornerRadius="16dp"
-                        android:backgroundTint="@color/blue_dark"
+                        android:backgroundTint="@color/accent_red"
                         android:textColor="@android:color/white"/>
                 </LinearLayout>
+
+                <Space android:layout_width="match_parent" android:layout_height="16dp"/>
+
+                <!-- RecyclerView para listar clientes -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_clientes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"/>
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

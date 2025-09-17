@@ -20,20 +20,20 @@
             android:backgroundTint="@color/blue_dark"
             android:title="Tipo de Servicio"
             android:titleTextColor="@android:color/white"
-            app:navigationIcon="?attr/homeAsUpIndicator"/>
+            app:navigationIcon="?attr/homeAsUpIndicator" />
 
-        <!-- Contenido dentro de ScrollView -->
+        <!-- Formulario (scrolleable) -->
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp">
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:fillViewport="false">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <!-- Campo de texto con borde Material3 -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -51,15 +51,13 @@
                         android:layout_height="wrap_content"
                         android:inputType="text"
                         android:padding="12dp"
-                        android:textSize="16sp"/>
+                        android:textSize="16sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Espacio -->
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="16dp"/>
+                    android:layout_height="16dp" />
 
-                <!-- Botón Guardar -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_guardar_tipo_servicio"
                     android:layout_width="match_parent"
@@ -67,47 +65,53 @@
                     android:text="Guardar"
                     app:cornerRadius="16dp"
                     android:backgroundTint="@color/accent_green"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/white" />
 
-                <!-- Espacio -->
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="16dp"/>
+                    android:layout_height="16dp" />
 
-                <!-- Botones Limpiar y Salir -->
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="2"
                     android:gravity="center">
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_limpiar_tipo_servicio"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Limpiar"
                         app:cornerRadius="16dp"
                         android:backgroundTint="@color/blue_dark"
-                        android:textColor="@android:color/white"/>
+                        android:textColor="@android:color/white" />
 
                     <Space
                         android:layout_width="8dp"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_salir_tipo_servicio"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Salir"
                         app:cornerRadius="16dp"
                         android:backgroundTint="@color/accent_red"
-                        android:textColor="@android:color/white"/>
+                        android:textColor="@android:color/white" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
+
+        <!-- Lista (ocupa el resto) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tipos_servicio"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
     </LinearLayout>
 
     <!-- Navigation Drawer -->
@@ -118,5 +122,5 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_menu_principal"
-        app:menu="@menu/activity_menu_principal_drawer"/>
+        app:menu="@menu/activity_menu_principal_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>
