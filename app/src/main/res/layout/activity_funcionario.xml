@@ -72,77 +72,91 @@
 
                 <Space android:layout_width="match_parent" android:layout_height="12dp" />
 
-                <!-- Nombre -->
-                <com.google.android.material.textfield.TextInputLayout
+                <!-- NOMBRE y APELLIDO en la misma línea -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre"
-                    app:boxBackgroundMode="outline">
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginBottom="12dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_nombre_funcionario"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
-                        android:padding="12dp"
-                        android:textSize="16sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:hint="Nombre"
+                        app:boxBackgroundMode="outline">
 
-                <Space android:layout_width="match_parent" android:layout_height="12dp" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_nombre_funcionario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:padding="12dp"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Apellido -->
-                <com.google.android.material.textfield.TextInputLayout
+                    <Space android:layout_width="8dp" android:layout_height="wrap_content" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="Apellido"
+                        app:boxBackgroundMode="outline">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_apellido_funcionario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:padding="12dp"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <!-- CI y TELEFONO en otra línea -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Apellido"
-                    app:boxBackgroundMode="outline">
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginBottom="12dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_apellido_funcionario"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
-                        android:padding="12dp"
-                        android:textSize="16sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:hint="CI"
+                        app:boxBackgroundMode="outline">
 
-                <Space android:layout_width="match_parent" android:layout_height="12dp" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_ci_funcionario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:padding="12dp"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- CI -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="CI"
-                    app:boxBackgroundMode="outline">
+                    <Space android:layout_width="8dp" android:layout_height="wrap_content" />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_ci_funcionario"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:padding="12dp"
-                        android:textSize="16sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:hint="Teléfono"
+                        app:boxBackgroundMode="outline">
 
-                <Space android:layout_width="match_parent" android:layout_height="12dp" />
-
-                <!-- Teléfono -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Teléfono"
-                    app:boxBackgroundMode="outline">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_telefono_funcionario"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="phone"
-                        android:padding="12dp"
-                        android:textSize="16sp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Space android:layout_width="match_parent" android:layout_height="12dp" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_telefono_funcionario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone"
+                            android:padding="12dp"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
                 <!-- Correo -->
                 <com.google.android.material.textfield.TextInputLayout
@@ -162,42 +176,51 @@
 
                 <Space android:layout_width="match_parent" android:layout_height="12dp" />
 
-                <!-- Estado -->
-                <com.google.android.material.textfield.TextInputLayout
+                <!-- ESTADO y FECHA DE CONTRATACION en otra línea -->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Estado"
-                    app:boxBackgroundMode="outline"
-                    app:endIconMode="dropdown_menu">
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginBottom="12dp">
 
-                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                        android:id="@+id/spinner_estado_funcionario"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:inputType="none"
-                        android:padding="12dp"
-                        android:text="ACTIVO"
-                        android:textSize="16sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:hint="Estado"
+                        app:boxBackgroundMode="outline"
+                        app:endIconMode="dropdown_menu">
 
-                <Space android:layout_width="match_parent" android:layout_height="12dp" />
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/spinner_estado_funcionario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:padding="12dp"
+                            android:text="ACTIVO"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Fecha de contratación -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Fecha de contratación"
-                    app:boxBackgroundMode="outline">
+                    <Space android:layout_width="8dp" android:layout_height="wrap_content" />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_fecha_contratacion"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:inputType="none"
-                        android:padding="12dp"
-                        android:textSize="16sp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:hint="Fecha de contratación"
+                        app:boxBackgroundMode="outline">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_fecha_contratacion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:padding="12dp"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
                 <Space android:layout_width="match_parent" android:layout_height="16dp" />
 
@@ -246,6 +269,7 @@
                         android:textSize="16sp"
                         app:cornerRadius="16dp" />
                 </LinearLayout>
+
             </LinearLayout>
         </ScrollView>
 

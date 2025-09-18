@@ -6,12 +6,74 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <include
-        android:id="@+id/app_bar_menu_principal"
-        layout="@layout/app_bar_menu_principal"
+    <!-- Contenedor principal con CoordinatorLayout -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
 
+        <!-- App bar / toolbar -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <include
+                android:id="@+id/app_bar_menu_principal"
+                layout="@layout/app_bar_menu_principal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- ScrollView con contenido -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:padding="16dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Título -->
+                <TextView
+                    android:id="@+id/tv_bienvenido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bienvenido al Sistema"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:paddingBottom="8dp"/>
+
+                <!-- Subtítulo -->
+                <TextView
+                    android:id="@+id/tv_datos_cargados"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Datos Cargados"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:paddingBottom="16dp"/>
+
+                <!-- Grid de resúmenes -->
+                <GridLayout
+                    android:id="@+id/grid_resumen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:alignmentMode="alignMargins"
+                    android:useDefaultMargins="true"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!-- Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -21,4 +83,5 @@
         android:background="@color/white"
         app:headerLayout="@layout/nav_header_menu_principal"
         app:menu="@menu/activity_menu_principal_drawer" />
+
 </androidx.drawerlayout.widget.DrawerLayout>

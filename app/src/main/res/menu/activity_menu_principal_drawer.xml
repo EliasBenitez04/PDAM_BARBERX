@@ -22,10 +22,10 @@
                 android:icon="@android:drawable/ic_menu_send"
                 android:title="@string/menu_fin_servicio" />
 
-            <item
+            <!--<item
                 android:id="@+id/nav_pagos"
                 android:icon="@android:drawable/ic_menu_send"
-                android:title="@string/menu_pagos" />
+                android:title="@string/menu_pagos" />-->
         </menu>
     </item>
 
@@ -62,10 +62,10 @@
                 android:icon="@android:drawable/ic_menu_send"
                 android:title="@string/menu_funcionario" />
 
-            <item
+            <!--<item
                 android:id="@+id/nav_formas_pago"
                 android:icon="@android:drawable/ic_menu_send"
-                android:title="@string/menu_forma_pagos" />
+                android:title="@string/menu_forma_pagos" />-->
 
             <item
                 android:id="@+id/nav_tipo_servicio"

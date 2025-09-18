@@ -2,7 +2,6 @@ package com.example.app_movil;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -158,14 +157,22 @@ public class AgendamientoActivity extends AppCompatActivity implements Navigatio
 
     private void cargarBarberosDropdown() {
         SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT fun_cod, fun_nom || ' ' || fun_ape AS nombre FROM funcionario", null);
+
+        Cursor cursor = db.rawQuery(
+                "SELECT f.fun_cod, f.fun_nom || ' ' || f.fun_ape AS nombre " +
+                        "FROM funcionario f " +
+                        "INNER JOIN cargo c ON f.car_cod = c.car_cod " +
+                        "WHERE c.car_desc = 'BARBERO'", null);
+
         List<String> barberos = new ArrayList<>();
         barberoIds.clear();
+
         while (cursor.moveToNext()) {
             barberos.add(cursor.getString(cursor.getColumnIndexOrThrow("nombre")));
             barberoIds.add(cursor.getInt(cursor.getColumnIndexOrThrow("fun_cod")));
         }
         cursor.close();
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, barberos);
         spinnerBarbero.setAdapter(adapter);
@@ -313,10 +320,10 @@ public class AgendamientoActivity extends AppCompatActivity implements Navigatio
                     cursor.getInt(cursor.getColumnIndexOrThrow("agen_cod")),
                     cursor.getString(cursor.getColumnIndexOrThrow("cliente")),
                     cursor.getString(cursor.getColumnIndexOrThrow("barbero")),
-                    cursor.getString(cursor.getColumnIndexOrThrow("agen_fecha_reserva")),
-                    cursor.getString(cursor.getColumnIndexOrThrow("agen_fecha_atencion")),
-                    cursor.getString(cursor.getColumnIndexOrThrow("agen_estado"))
+                    cursor.getString(cursor.getColumnIndexOrThrow("agen_date_reserva")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("agen_date_serv"))
             ));
+
         }
         cursor.close();
         adapterAgendamientos.notifyDataSetChanged();
@@ -411,15 +418,14 @@ public class AgendamientoActivity extends AppCompatActivity implements Navigatio
 
     private class AgendamientoItem {
         int id;
-        String cliente, barbero, fechaReserva, fechaAtencion, estado;
+        String cliente, barbero, fechaReserva, fechaAtencion;
 
-        AgendamientoItem(int i, String c, String b, String fr, String fa, String e) {
+        AgendamientoItem(int i, String c, String b, String fr, String fa) {
             id = i;
             cliente = c;
             barbero = b;
             fechaReserva = fr;
             fechaAtencion = fa;
-            estado = e;
         }
     }
 
@@ -452,18 +458,27 @@ public class AgendamientoActivity extends AppCompatActivity implements Navigatio
         @Override
         public void onBindViewHolder(@NonNull AgendamientoViewHolder holder, int position) {
             AgendamientoItem a = lista.get(position);
-            holder.tv.setText("Cliente: " + a.cliente + "\nBarbero: " + a.barbero +
-                    "\nReserva: " + a.fechaReserva + "\nAtención: " + a.fechaAtencion +
-                    "\nEstado: " + a.estado);
+            holder.tv.setText(
+                    "Cliente: " + a.cliente +
+                            "\nBarbero: " + a.barbero +
+                            "\nReserva: " + a.fechaReserva +
+                            "\nAtención: " + a.fechaAtencion
+            );
 
             holder.btnBorrar.setOnClickListener(v -> {
                 SQLiteDatabase db = helper.getWritableDatabase();
-                db.delete("agendamiento", "agen_cod=?", new String[]{String.valueOf(a.id)});
+
+                // 1️⃣ Borrar detalles primero
                 db.delete("det_agendamiento", "agen_cod=?", new String[]{String.valueOf(a.id)});
+
+                // 2️⃣ Luego borrar la cabecera
+                db.delete("agendamiento", "agen_cod=?", new String[]{String.valueOf(a.id)});
+
                 lista.remove(position);
                 notifyDataSetChanged();
                 Toast.makeText(AgendamientoActivity.this, "Agendamiento borrado", Toast.LENGTH_SHORT).show();
             });
+
         }
 
         @Override
